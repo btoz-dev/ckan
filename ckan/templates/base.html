@@ -10,6 +10,16 @@
 
   {# Allows custom attributes to be added to the <head> tag #}
   <head{% block headtag %}{% endblock %}>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQQXH5Q3K4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZQQXH5Q3K4');
+    </script>
+    
     {#
     Add custom meta tags to the page. Call super() to get the default tags
     such as charset, viewport and generator.
