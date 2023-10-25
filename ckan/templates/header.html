@@ -55,7 +55,11 @@
         {% endif %} {% endblock %}
       </ul>
     </nav>
-    {% endif %} {% endblock %}
+    {% endif %} 
+    {% endblock %}
+    <div id="clock" data-module="clock">
+      <span id="date-time" class="username"></span>
+    </div>
   </div>
 </div>
 {% endblock %}
@@ -85,24 +89,47 @@
       {% block header_site_navigation %}
       <nav class="section navigation">
         <ul class="nav nav-pills">
-            {% block header_site_navigation_tabs %}
-		{{ h.build_nav_main(
-		    ('dataset.search', _('Datasets')),
-		    ('organization.index', _('Organizations')),
-		    ('group.index', _('Groups')),
-		    ('home.about', _('About')) ) }}
-	    {% endblock %}
+        {#
+          {% block header_site_navigation_tabs %}
+            {{ h.build_nav_main(
+            ('home.index', _('Home')),
+            ('dataset.search', _('Dataset')),
+            ('organization.index', _('Organizations')),
+            ('structure.index', _('Structure')),
+            ('infographic.index', _('Infographic')),
+            ('gallery.index', _('Gallery')),
+            ('home.about', _('About')) ) }}
+	        {% endblock %}
+        #}
+        {#
+          {{ h.build_nav_main(
+          ('home.index', _('Home')),
+          ('dataset.search', _('Dataset')),
+          ('organization.index', _('Organizations')),
+          ('home.structure', _('Structure')),
+          ('home.infographic', _('Infographic')),
+          ('home.gallery', _('Gallery')),
+          ('home.about', _('About')) ) }}
+        #}
+        {{ h.build_nav_main(
+          ('home.index', _('Home')),
+          ('dataset.search', _('Dataset')),
+          ('organization.index', _('Organizations')),
+          ('home.about', _('About')) ) }}
         </ul>
       </nav>
-      {% endblock %} {% block header_site_search %}
-      <form class="section site-search simple-input" action="{% url_for 'dataset.search' %}" method="get">
-        <div class="field">
-          <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-          <input id="field-sitewide-search" type="text" class="form-control" name="q" placeholder="{{ _('Search') }}" aria-label="{{ _('Search datasets') }}"/>
-          <button class="btn-search" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
-        </div>
-      </form>
-      {% endblock %}
+      {% endblock %} 
+      {#
+        {% block header_site_search %}
+        <form class="section site-search simple-input" action="{% url_for 'dataset.search' %}" method="get">
+          <div class="field">
+            <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
+            <input id="field-sitewide-search" type="text" class="form-control" name="q" placeholder="{{ _('Search') }}" aria-label="{{ _('Search datasets') }}"/>
+            <button class="btn-search" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+        {% endblock %}
+      #}
     </div>
   </div>
 </header>

@@ -9715,7 +9715,7 @@ h4 small {
 }
 .homepage .module-search .tags {
   padding: 5px 10px 10px 10px;
-  background-color: #003647;
+  background-color: #00AEE6;
   border-radius: 0 0 3px 3px;
 }
 .homepage .module-search .tags:before,
@@ -9812,7 +9812,7 @@ h4 small {
 .account-masthead {
   min-height: 30px;
   color: #fff;
-  background: #003647 url("../../../base/images/bg.png");
+  background: #9D0A0E url("../../../base/images/bg.png");
 }
 .account-masthead:before,
 .account-masthead:after {
@@ -9910,7 +9910,7 @@ h4 small {
   margin-bottom: initial;
   padding: 10px 0;
   color: #fff;
-  background: #005d7a url("../../../base/images/bg.png");
+  background: #00AEE6 url("../../../base/images/bg.png");
 }
 .masthead:before,
 .masthead:after {
@@ -10797,7 +10797,7 @@ br.line-height2 {
   z-index: 0;
 }
 body {
-  background: #005d7a url("../../../base/images/bg.png");
+  /* background: #005d7a url("../../../base/images/bg.png"); */
 }
 [hidden] {
   display: none;
@@ -10891,4 +10891,12 @@ iframe {
 }
 .reduced-padding {
   padding: 3px 5px;
+}
+.dataset-col {
+  padding-left: 0;
+}
+.dataset-data {
+  border-radius: 8px;
+  background-color: #00AEE6;
+  padding: 10px;
 }

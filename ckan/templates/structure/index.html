@@ -11,10 +11,8 @@
     <div id="content" class="container">
       {{ self.flash() }}
     </div>
-    <p>{{ detect }}</p>
     {% block primary_content %}
-      {# {% snippet "home/layout{0}.html".format(homepage_style) %} #}
-      {% snippet "home/layout-custom.html", coba='tes' %}
+      {% snippet "home/layout{0}.html".format(homepage_style) %}
     {% endblock %}
   </div>
 {% endblock %}
