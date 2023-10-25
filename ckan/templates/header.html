@@ -58,7 +58,6 @@
     {% endif %} 
     {% endblock %}
     <div id="clock" data-module="clock">
-      Ini Jam
       <span id="date-time" class="username"></span>
     </div>
   </div>
@@ -90,15 +89,33 @@
       {% block header_site_navigation %}
       <nav class="section navigation">
         <ul class="nav nav-pills">
-        {% block header_site_navigation_tabs %}
+        {#
+          {% block header_site_navigation_tabs %}
+            {{ h.build_nav_main(
+            ('home.index', _('Home')),
+            ('dataset.search', _('Dataset')),
+            ('organization.index', _('Organizations')),
+            ('structure.index', _('Structure')),
+            ('infographic.index', _('Infographic')),
+            ('gallery.index', _('Gallery')),
+            ('home.about', _('About')) ) }}
+	        {% endblock %}
+        #}
+        {#
           {{ h.build_nav_main(
+          ('home.index', _('Home')),
           ('dataset.search', _('Dataset')),
           ('organization.index', _('Organizations')),
-          ('structure.index', _('Structure')),
-          ('infographic.index', _('Infographic')),
-          ('gallery.index', _('Gallery')),
+          ('home.structure', _('Structure')),
+          ('home.infographic', _('Infographic')),
+          ('home.gallery', _('Gallery')),
           ('home.about', _('About')) ) }}
-	      {% endblock %}
+        #}
+        {{ h.build_nav_main(
+          ('home.index', _('Home')),
+          ('dataset.search', _('Dataset')),
+          ('organization.index', _('Organizations')),
+          ('home.about', _('About')) ) }}
         </ul>
       </nav>
       {% endblock %} 
