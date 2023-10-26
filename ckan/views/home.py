@@ -64,12 +64,24 @@ def index():
                 u' if you need to reset your password.') \
             % config.get(u'ckan.site_title')
         h.flash_notice(msg, allow_html=True)
-    return base.render(u'home/index.html', extra_vars={})
+    return base.render(u'home/index.html', extra_vars={'detect':'tes'})
 
 
 def about():
     u''' display about page'''
     return base.render(u'home/about.html', extra_vars={})
+
+def structure():
+    u''' display structure page'''
+    return base.render(u'home/structure.html')
+        
+def infographic():
+    u''' display infographic page'''
+    return base.render(u'home/infographic.html')
+
+def gallery():
+    u''' display gallery page'''
+    return base.render(u'home/gallery.html')
 
 
 def redirect_locale(target_locale, path=None):
@@ -82,7 +94,10 @@ def redirect_locale(target_locale, path=None):
 
 util_rules = [
     (u'/', index),
-    (u'/about', about)
+    (u'/about', about),
+    (u'/structure', structure),
+    (u'/infographic', infographic),
+    (u'/gallery', gallery)
 ]
 for rule, view_func in util_rules:
     home.add_url_rule(rule, view_func=view_func)

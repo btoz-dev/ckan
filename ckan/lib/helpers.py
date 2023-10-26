@@ -84,6 +84,9 @@ LEGACY_ROUTE_NAMES = {
     'organization_activity': 'organization.activity',
     'organization_read': 'organization.read',
     'organization_about': 'organization.about',
+    'structure': 'home.structure',
+    'infographic': 'home.infographic',
+    'gallery': 'home.gallery',
 }
 
 

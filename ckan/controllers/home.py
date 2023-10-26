@@ -85,6 +85,15 @@ class HomeController(base.BaseController):
     def about(self):
         return base.render('home/about.html')
 
+    def structure(self):
+        return base.render('home/structure.html')
+        
+    def infographic(self):
+        return base.render('home/infographic.html')
+    
+    def gallery(self):
+        return base.render('home/gallery.html')
+
     def cache(self, id):
         '''Manual way to clear the caches'''
         if id == 'clear':
