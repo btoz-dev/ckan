@@ -8,28 +8,24 @@
 <div role="main">
   <div class="container">
     <div class="row row2">
-      <h2 class="text-primary">Dataset Terbaru x{{ coba }}</h2>
-      <div class="col-md-4 col1 dataset-col">
-        <div class="dataset-data">tes</div>
-      </div>
-      <div class="col-md-4 col2 dataset-col">
-        <div class="dataset-data">tes</div>
-      </div>
-      <div class="col-md-4 col3 dataset-col">
-        <div class="dataset-data">tes</div>
-      </div>
+      <h2 class="text-primary">Dataset Terbaru</h2>
+      {% if new_datasets %}
+        {% for new_dataset in new_datasets %}
+          <div class="col-md-3 col1 dataset-col">
+            <div class="dataset-data">{{ new_dataset.title }}</div>
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
     <div class="row row2">
       <h2 class="text-primary">Dataset Terpopuler</h2>
-      <div class="col-md-4 col1 dataset-col">
-        <div class="dataset-data">tes</div>
-      </div>
-      <div class="col-md-4 col2 dataset-col">
-        <div class="dataset-data">tes</div>
-      </div>
-      <div class="col-md-4 col3 dataset-col">
-        <div class="dataset-data">tes</div>
-      </div>
+      {% if popular_datasets %}
+        {% for popular_dataset in popular_datasets %}
+          <div class="col-md-3 col1 dataset-col">
+            <div class="dataset-data">{{ popular_dataset.title }}</div>
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
     <div class="row row2">
       <div class="col-md-12 col1">

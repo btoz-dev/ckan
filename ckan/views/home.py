@@ -64,7 +64,31 @@ def index():
                 u' if you need to reset your password.') \
             % config.get(u'ckan.site_title')
         h.flash_notice(msg, allow_html=True)
-    return base.render(u'home/index.html', extra_vars={'detect':'tes'})
+    
+    try:
+        data_dict = {u'q': u'*:*',
+                     u'facet.field': h.facets(),
+                     u'rows': 4,
+                     u'start': 0,
+                     u'sort': u'views_total desc',
+                     u'fq': u'capacity:"public"'}
+        query = logic.get_action(u'package_search')(context, data_dict)
+        g.search_facets_popular = query['search_facets']
+        g.package_count_popular = query['count']
+        g.datasets_popular = query['results']
+
+        g.facet_titles_popular = {
+            u'organization': _(u'Organizations'),
+            u'groups': _(u'Groups'),
+            u'tags': _(u'Tags'),
+            u'res_format': _(u'Formats'),
+            u'license': _(u'Licenses'),
+        }
+
+    except search.SearchError:
+        g.package_count_popular = 0
+        
+    return base.render(u'home/index.html', extra_vars={})
 
 
 def about():
